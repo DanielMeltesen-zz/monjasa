@@ -1,8 +1,6 @@
 # Assignment for Monjasa
 
-**Assssignment based on [Test.pdf](http://hr.monjasa.com/webdeveloper/Test.pdf)
-
-This is the basic starter project for [Foundation for Sites 6](http://foundation.zurb.com/sites). It includes a Sass compiler and a starter HTML file for you.
+Assssignment based on [Test.pdf](http://hr.monjasa.com/webdeveloper/Test.pdf)
 
 ## Installation
 
