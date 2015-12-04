@@ -1,0 +1,72 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation for Sites</title>
+
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
+  </head>
+  <body ng-app="employeeApp">
+    
+    <div class="header row clearfix">
+      <div class="header__logo small-12 medium-6 columns left">
+        <img src="assets/images/logo.png"/>
+      </div>
+    </div>
+
+    <div  class="row">
+      <div itemscope itemtype="http://schema.org/Organization" ng-controller="MainController" class="employee__widget small-12 columns" >
+        <span class="employee__headline">Choose employees by department:</span>
+        <div class="employee__employee--input" class="small-12">
+            <form class="employee__employee--dropdown">
+              <select
+              ng-model="company"
+              ng-change="updateList(company)"
+              ng-options="company for company in companyList">
+              <option value="">All Departments</option>
+            </select>
+          </form>
+        </div>
+        <div itemscope itemtype="http://schema.org/Person" class="row clearfix" >
+          <div itemprop="employee" ng-repeat="employee in filteredList | orderBy:'-Company'" class="employee__wrapper small-12 medium-6 large-4 columns left">
+            <div class="employee">
+              <img class="employee__image" src="https://placeimg.com/370/200/people/grayscale"/>
+              <ul class="employee__list">
+                <li itemprop="name" ng-show="employee['First Name'].length" class="employee__list--name">{{ employee['First Name'] + " " + employee['Last Name']}} </li>
+                <li itemprop="email" ng-show="employee.Email.length" class="employee__list--email"><i class="fa fa-envelope"></i> {{ employee.Email }}</li>
+                <li itemprop="telephone" ng-show="employee['Work phone'].length" class="employee__list--phone"><i class="fa fa-phone"></i> {{ employee['Work phone'] }}</li>
+                <li itemprop="telephone" ng-show="employee['Mobile phone'].length" class="employee__list--mobile"><i class="fa fa-mobile"></i> {{ employee['Mobile phone'] }}</li>
+                <li itemprop="worksFor" ng-show="employee.Company.length" class="employee__list--company"><i class="fa fa-building-o"></i> {{ employee.Company }}</li>
+                <li itemprop="workLocation" ng-show="employee.Department.length" class="employee__list--department"><i class="fa fa-globe"></i> {{ employee.Department }}</li>
+                <li itemprop="jobTitle" ng-show="employee['Job Title'].length" class="employee__list--title"><i class="fa fa-user"></i> {{ employee['Job Title'] }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/what-input/what-input.js"></script>
+    <script src="bower_components/foundation-sites/dist/foundation.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Modules -->
+    <script src="js/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/MainController.js"></script>
+
+    <!-- Services -->
+    <script src="js/services/employees.js"></script>
+
+    <!-- Directives -->
+  </body>
+</html>
