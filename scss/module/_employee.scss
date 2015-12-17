@@ -38,79 +38,46 @@ $ns: 'employee';
 .#{$ns}__wrapper {
 	@include clearfix;
 	padding:20px;
-	&.top{
-		border-bottom: 1px solid $body-background;
-		font-size: 14px;
-	}
-	&.bottom{
-		padding: 0 20px 20px 20px; 
-	}
 }
-.#{$ns}__user {
-	@include clearfix;
-	padding: 10px 0 5px 0;
-
-	& img{
-		float: left; 
-	}
-	& div {
-		float: left;
-		margin: 0 0 0 10px;
-	}
-} 
+.#{$ns}__employee--input {
+	width: 160px;
+}
 	
-	.#{$ns}__employee--input {
-		width: 160px;
-	}
+.#{$ns}__employee--dropdown {
+	border:1px solid #F5772B;
 	
-	.#{$ns}__employee--dropdown {
-		border:1px solid #F5772B;
+	& select {
+		font-size: 	13px;
+		border: 0 !important;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+		background: #1A1A1A url(../assets/images/arrow-down.png) no-repeat 90% center;
+		width: 100%;
+		margin: 0;
+		color: #fff;
+		padding: 5px;
 		
-		& select {
-			font-size: 	13px;
-			border: 0 !important;
-				-webkit-appearance: none;
-				-moz-appearance: none;
-			background: #1A1A1A url(../assets/images/arrow-down.png) no-repeat 90% center;
-			width: 100%;
-			margin: 0;
-			color: #fff;
-			padding: 5px;
-			
-			&:hover{
-				cursor:pointer;
-			}
-			&:after {
-				content: "\f107"; 
-				font-family: FontAwesome;
-				font-style: normal;
-				font-weight: normal;
-				text-decoration: inherit;
-				position: absolute;
-				font-size: 400px;
-				color: lightblue;
-				top: 50%;
-				left: 50%;
-			}
+		&:hover{
+			cursor:pointer;
 		}
-		
+		&:after {
+			content: "\f107"; 
+			font-family: FontAwesome;
+			font-style: normal;
+			font-weight: normal;
+			text-decoration: inherit;
+			position: absolute;
+			font-size: 400px;
+			color: lightblue;
+			top: 50%;
+			left: 50%;
+		}
 	}
+	
+}
 .#{$ns}__headline {
 	font-size: 	13px;
 	padding-bottom: 	10px;
 	border-bottom: 	1px solid #fefefe dashed;
 	color: 	#fff;
-}
-
-.#{$ns}__cta {
-	@include clearfix;
-	width: 100%;
-	margin-top: 20px;
-	border-top: 1px solid $body-background;
-	font-size:11px;
-	padding: 20px 0 10px 0;
-		& h1 {
-			font-size: 16px;
-			margin: 0; 
-		}
 }

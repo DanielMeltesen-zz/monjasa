@@ -5,6 +5,6 @@ App.factory('employees', ['$http', function($http) {
             }) 
             .error(function(err) { 
               return err;
-              console.log('Kig her ' + err);
+              //console.log('Kig her ' + err);
             });
 }]);
